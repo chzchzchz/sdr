@@ -1,0 +1,7 @@
+FROM debian:latest
+
+RUN apt update -y 
+RUN apt install -y ffmpeg
+RUN apt install -y imagemagick
+ADD run.sh /run.sh
+CMD [ "/run.sh" ]
