@@ -1,5 +1,5 @@
 <?xml version='1.0' encoding='utf-8'?>
-<?grc format='1' created='3.7.10'?>
+<?grc format='1' created='3.7.13'?>
 <flow_graph>
   <timestamp>Sun Oct  1 20:18:05 2017</timestamp>
   <block>
@@ -30,7 +30,7 @@
     </param>
     <param>
       <key>_coordinate</key>
-      <value>(8, 8)</value>
+      <value>(8, 0)</value>
     </param>
     <param>
       <key>_rotation</key>
@@ -73,12 +73,20 @@
       <value>True</value>
     </param>
     <param>
+      <key>sizing_mode</key>
+      <value>fixed</value>
+    </param>
+    <param>
       <key>thread_safe_setters</key>
       <value></value>
     </param>
     <param>
       <key>title</key>
       <value>flex channel</value>
+    </param>
+    <param>
+      <key>placement</key>
+      <value>(0,0)</value>
     </param>
   </block>
   <block>
@@ -93,7 +101,7 @@
     </param>
     <param>
       <key>_coordinate</key>
-      <value>(8, 108)</value>
+      <value>(264, 76)</value>
     </param>
     <param>
       <key>_rotation</key>
@@ -120,7 +128,7 @@
     </param>
     <param>
       <key>_coordinate</key>
-      <value>(128, 108)</value>
+      <value>(184, 76)</value>
     </param>
     <param>
       <key>_rotation</key>
@@ -159,7 +167,7 @@
     </param>
     <param>
       <key>_coordinate</key>
-      <value>(616, 232)</value>
+      <value>(416, 160)</value>
     </param>
     <param>
       <key>_rotation</key>
@@ -206,7 +214,7 @@
     </param>
     <param>
       <key>_coordinate</key>
-      <value>(184, 24)</value>
+      <value>(184, 0)</value>
     </param>
     <param>
       <key>_rotation</key>
@@ -223,6 +231,10 @@
     <param>
       <key>short_id</key>
       <value></value>
+    </param>
+    <param>
+      <key>hide</key>
+      <value>none</value>
     </param>
     <param>
       <key>type</key>
@@ -253,11 +265,11 @@
     </param>
     <param>
       <key>_coordinate</key>
-      <value>(800, 252)</value>
+      <value>(456, 260)</value>
     </param>
     <param>
       <key>_rotation</key>
-      <value>0</value>
+      <value>180</value>
     </param>
     <param>
       <key>id</key>
@@ -281,7 +293,7 @@
     </param>
   </block>
   <block>
-    <key>freq_xlating_fft_filter_ccc</key>
+    <key>freq_xlating_fir_filter_xxx</key>
     <param>
       <key>alias</key>
       <value></value>
@@ -292,7 +304,7 @@
     </param>
     <param>
       <key>comment</key>
-      <value></value>
+      <value>2048ksps * Xlate =&gt; 204.8ksps</value>
     </param>
     <param>
       <key>affinity</key>
@@ -300,15 +312,15 @@
     </param>
     <param>
       <key>decim</key>
-      <value>2</value>
+      <value>10</value>
     </param>
     <param>
       <key>_enabled</key>
-      <value>1</value>
+      <value>True</value>
     </param>
     <param>
       <key>_coordinate</key>
-      <value>(184, 224)</value>
+      <value>(144, 160)</value>
     </param>
     <param>
       <key>_rotation</key>
@@ -316,7 +328,7 @@
     </param>
     <param>
       <key>id</key>
-      <value>freq_xlating_fft_filter_ccc_0</value>
+      <value>freq_xlating_fir_filter_xxx_0</value>
     </param>
     <param>
       <key>maxoutbuf</key>
@@ -327,20 +339,16 @@
       <value>0</value>
     </param>
     <param>
-      <key>nthreads</key>
-      <value>1</value>
-    </param>
-    <param>
-      <key>samp_delay</key>
-      <value>0</value>
-    </param>
-    <param>
       <key>samp_rate</key>
       <value>samp_rate</value>
     </param>
     <param>
       <key>taps</key>
       <value>taps</value>
+    </param>
+    <param>
+      <key>type</key>
+      <value>ccc</value>
     </param>
   </block>
   <block>
@@ -363,11 +371,11 @@
     </param>
     <param>
       <key>cutoff_freq</key>
-      <value>sig_bw</value>
+      <value>22050</value>
     </param>
     <param>
       <key>decim</key>
-      <value>int(float(samp_rate/2)/float(pass_bw))</value>
+      <value>8</value>
     </param>
     <param>
       <key>_enabled</key>
@@ -379,7 +387,7 @@
     </param>
     <param>
       <key>_coordinate</key>
-      <value>(424, 208)</value>
+      <value>(168, 392)</value>
     </param>
     <param>
       <key>_rotation</key>
@@ -407,11 +415,11 @@
     </param>
     <param>
       <key>samp_rate</key>
-      <value>samp_rate/2</value>
+      <value>22050*16</value>
     </param>
     <param>
       <key>width</key>
-      <value>sig_bw/2</value>
+      <value>2048</value>
     </param>
     <param>
       <key>win</key>
@@ -430,7 +438,7 @@
     </param>
     <param>
       <key>_coordinate</key>
-      <value>(952, 252)</value>
+      <value>(456, 324)</value>
     </param>
     <param>
       <key>_rotation</key>
@@ -462,49 +470,6 @@
     </param>
   </block>
   <block>
-    <key>pad_sink</key>
-    <param>
-      <key>comment</key>
-      <value></value>
-    </param>
-    <param>
-      <key>_enabled</key>
-      <value>True</value>
-    </param>
-    <param>
-      <key>_coordinate</key>
-      <value>(632, 372)</value>
-    </param>
-    <param>
-      <key>_rotation</key>
-      <value>0</value>
-    </param>
-    <param>
-      <key>id</key>
-      <value>pad_sink_1_0</value>
-    </param>
-    <param>
-      <key>type</key>
-      <value>complex</value>
-    </param>
-    <param>
-      <key>label</key>
-      <value>postSquelch</value>
-    </param>
-    <param>
-      <key>num_streams</key>
-      <value>1</value>
-    </param>
-    <param>
-      <key>optional</key>
-      <value>True</value>
-    </param>
-    <param>
-      <key>vlen</key>
-      <value>1</value>
-    </param>
-  </block>
-  <block>
     <key>pad_source</key>
     <param>
       <key>comment</key>
@@ -516,7 +481,7 @@
     </param>
     <param>
       <key>_coordinate</key>
-      <value>(8, 252)</value>
+      <value>(8, 164)</value>
     </param>
     <param>
       <key>_rotation</key>
@@ -548,6 +513,65 @@
     </param>
   </block>
   <block>
+    <key>rational_resampler_xxx</key>
+    <param>
+      <key>alias</key>
+      <value></value>
+    </param>
+    <param>
+      <key>comment</key>
+      <value>204.8ksps * Resample =&gt; 16 * 22050</value>
+    </param>
+    <param>
+      <key>affinity</key>
+      <value></value>
+    </param>
+    <param>
+      <key>decim</key>
+      <value>2**8</value>
+    </param>
+    <param>
+      <key>_enabled</key>
+      <value>True</value>
+    </param>
+    <param>
+      <key>fbw</key>
+      <value>0</value>
+    </param>
+    <param>
+      <key>_coordinate</key>
+      <value>(168, 280)</value>
+    </param>
+    <param>
+      <key>_rotation</key>
+      <value>180</value>
+    </param>
+    <param>
+      <key>id</key>
+      <value>rational_resampler_xxx_0</value>
+    </param>
+    <param>
+      <key>interp</key>
+      <value>3*3*7*7</value>
+    </param>
+    <param>
+      <key>maxoutbuf</key>
+      <value>0</value>
+    </param>
+    <param>
+      <key>minoutbuf</key>
+      <value>0</value>
+    </param>
+    <param>
+      <key>taps</key>
+      <value>taps</value>
+    </param>
+    <param>
+      <key>type</key>
+      <value>ccc</value>
+    </param>
+  </block>
+  <block>
     <key>parameter</key>
     <param>
       <key>alias</key>
@@ -563,7 +587,7 @@
     </param>
     <param>
       <key>_coordinate</key>
-      <value>(312, 24)</value>
+      <value>(312, 0)</value>
     </param>
     <param>
       <key>_rotation</key>
@@ -580,6 +604,10 @@
     <param>
       <key>short_id</key>
       <value></value>
+    </param>
+    <param>
+      <key>hide</key>
+      <value>none</value>
     </param>
     <param>
       <key>type</key>
@@ -606,7 +634,7 @@
     </param>
     <param>
       <key>_coordinate</key>
-      <value>(424, 24)</value>
+      <value>(424, 0)</value>
     </param>
     <param>
       <key>_rotation</key>
@@ -623,6 +651,10 @@
     <param>
       <key>short_id</key>
       <value></value>
+    </param>
+    <param>
+      <key>hide</key>
+      <value>none</value>
     </param>
     <param>
       <key>type</key>
@@ -649,7 +681,7 @@
     </param>
     <param>
       <key>_coordinate</key>
-      <value>(560, 24)</value>
+      <value>(560, 0)</value>
     </param>
     <param>
       <key>_rotation</key>
@@ -666,6 +698,10 @@
     <param>
       <key>short_id</key>
       <value></value>
+    </param>
+    <param>
+      <key>hide</key>
+      <value>none</value>
     </param>
     <param>
       <key>type</key>
@@ -692,7 +728,7 @@
     </param>
     <param>
       <key>_coordinate</key>
-      <value>(632, 24)</value>
+      <value>(632, 0)</value>
     </param>
     <param>
       <key>_rotation</key>
@@ -709,6 +745,10 @@
     <param>
       <key>short_id</key>
       <value></value>
+    </param>
+    <param>
+      <key>hide</key>
+      <value>none</value>
     </param>
     <param>
       <key>type</key>
@@ -732,8 +772,8 @@
     <sink_key>0</sink_key>
   </connection>
   <connection>
-    <source_block_id>freq_xlating_fft_filter_ccc_0</source_block_id>
-    <sink_block_id>low_pass_filter_0</sink_block_id>
+    <source_block_id>freq_xlating_fir_filter_xxx_0</source_block_id>
+    <sink_block_id>rational_resampler_xxx_0</sink_block_id>
     <source_key>0</source_key>
     <sink_key>0</sink_key>
   </connection>
@@ -744,14 +784,14 @@
     <sink_key>0</sink_key>
   </connection>
   <connection>
-    <source_block_id>low_pass_filter_0</source_block_id>
-    <sink_block_id>pad_sink_1_0</sink_block_id>
+    <source_block_id>pad_source_0</source_block_id>
+    <sink_block_id>freq_xlating_fir_filter_xxx_0</sink_block_id>
     <source_key>0</source_key>
     <sink_key>0</sink_key>
   </connection>
   <connection>
-    <source_block_id>pad_source_0</source_block_id>
-    <sink_block_id>freq_xlating_fft_filter_ccc_0</sink_block_id>
+    <source_block_id>rational_resampler_xxx_0</source_block_id>
+    <sink_block_id>low_pass_filter_0</sink_block_id>
     <source_key>0</source_key>
     <sink_key>0</sink_key>
   </connection>
